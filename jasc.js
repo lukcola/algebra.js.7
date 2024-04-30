@@ -6,7 +6,15 @@ var auto = {
     maxBrzina: 220,
     registriran: true,
     ubrzaj: function (vrijeme) {
-        return vrijeme * 5;
+        let tmpVrijeme = 0;
+        while (this.brzina <= this.maxBrzina) {
+            this.brzina = this.brzina + 5;
+            if (tmpVrijeme == vrijeme) {
+                break;
+            }
+            tmpVrijeme++;
+        }
+        return this.brzina;
     },
     zakoci: function (vrijeme) {
         return vrijeme / 5;
